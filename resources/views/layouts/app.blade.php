@@ -24,6 +24,10 @@
             display: block; /* Esto ayuda a centrar verticalmente la imagen */
             margin: 0 auto; /* Centra la imagen horizontalmente */
         }
+        .margin {
+            margin-left: 25px; 
+            margin-right: 25px; 
+        }
     </style>
 </head>
 <body>

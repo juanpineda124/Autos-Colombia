@@ -28,10 +28,6 @@ class SalidaController extends Controller
             $salidaCreatedAt = $salidaRecord->created_at;
 
             $diffInSeconds = Carbon::parse($entradaCreatedAt)->diffInSeconds($salidaCreatedAt);
-
-            echo "Diferencia en segundos: " . $diffInSeconds;
-        } else {
-            echo "No se encontraron registros en una de las tablas.";
         }
         
         // Obtiene todas las salidas
