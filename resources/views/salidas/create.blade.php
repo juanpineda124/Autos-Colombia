@@ -20,7 +20,7 @@
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-success mb-3">Guardar</button>
-                            <a href="{{ route('entradas.index') }}" class="btn btn-secondary mx-5 mb-3">Regresar</a>
+                            <a href="{{ route('salidas.index') }}" class="btn btn-secondary mx-5 mb-3">Regresar</a>
                         </form>
                     </div>
                 </div>

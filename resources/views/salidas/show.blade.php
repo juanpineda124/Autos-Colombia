@@ -10,10 +10,20 @@
                 <p><strong>Placa:</strong> Esta salida no tiene una placa asignada.</p>
             @endif
         </div>
-        <div class="col-md-6">
-            <p><strong>Fecha de creación:</strong> {{ $salida->created_at }}</p>
-            <p><strong>Fecha de actualización:</strong> {{ $salida->updated_at }}</p>
-        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="margin">
+                    <p><strong>Telefono Propietario:</strong> {{ $salida->entrada->tel }}</p>
+                    <p><strong>Celda:</strong> {{ $salida->entrada->celda }}</p>
+                    <p><strong>Fecha de entrada:</strong> {{ $salida->entrada->created_at }}</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <div class="margin">
+                    <p><strong>Fecha de creación:</strong> {{ $salida->created_at }}</p>
+                    <p><strong>Fecha de actualización:</strong> {{ $salida->updated_at }}</p>
+                </div>
+            </div>
         </div>
         <div class="card-footer d-flex justify-content-start align-items-center">
             <a href="{{ route('salidas.index') }}" class="btn btn-secondary me-2">Regresar</a>
