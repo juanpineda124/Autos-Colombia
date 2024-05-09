@@ -52,7 +52,7 @@ class EntradaController extends Controller
             // Crea una nueva entrada con los datos validados del formulario
             Entrada::create($request->validated());
             // Redirige al usuario a la página de listado de entradas con un mensaje de éxito
-            return redirect()->route('entradas.index')->with('success', 'Entrada creada exitosamente');
+            return redirect()->route('entradas.index')->with('mensaje', 'Entrada creada exitosamente');
         } else {
             // Si no está autenticado, redirige al usuario a la página de inicio de sesión
             return redirect()->guest("/login");
@@ -109,7 +109,7 @@ class EntradaController extends Controller
             // Actualiza los datos de la entrada con los datos validados del formulario
             $entrada->update($request->validated());
             // Redirige al usuario a la página de listado de entradas con un mensaje de éxito
-            return redirect()->route('entradas.index')->with('success', 'Entrada actualizada exitosamente');
+            return redirect()->route('entradas.index')->with('mensaje', 'Entrada actualizada exitosamente');
         } else {
             // Si no está autenticado, redirige al usuario a la página de inicio de sesión
             return redirect()->guest("/login");
@@ -129,7 +129,7 @@ class EntradaController extends Controller
             // Elimina la entrada
             $entrada->delete();
             // Redirige al usuario a la página de listado de entradas con un mensaje de éxito
-            return redirect()->route('entradas.index')->with('success', 'Entrada eliminada exitosamente');
+            return redirect()->route('entradas.index')->with('mensaje', 'Entrada eliminada exitosamente');
         } else {
             // Si no está autenticado, redirige al usuario a la página de inicio de sesión
             return redirect()->guest("/login");

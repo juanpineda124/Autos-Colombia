@@ -70,7 +70,7 @@ class SalidaController extends Controller
             // Crea una nueva salida con los datos del formulario
             Salida::create($request->all());
             // Redirige al usuario a la página de listado de salidas con un mensaje de éxito
-            return redirect()->route('salidas.index')->with('success', 'Salida creada exitosamente');
+            return redirect()->route('salidas.index')->with('mensaje', 'Salida creada exitosamente');
         } else {
             // Si no está autenticado, redirige al usuario a la página de inicio de sesión
             return redirect()->guest("/login");
@@ -133,7 +133,7 @@ class SalidaController extends Controller
             // Actualiza la salida con los datos validados
             $salida->update($validated); 
             // Redirige al usuario a la página de listado de salidas con un mensaje de éxito
-            return redirect()->route('salidas.index')->with('success', 'Salida actualizada exitosamente');
+            return redirect()->route('salidas.index')->with('mensaje', 'Salida actualizada exitosamente');
         } else {
             // Si no está autenticado, redirige al usuario a la página de inicio de sesión
             return redirect()->guest("/login");
@@ -153,7 +153,7 @@ class SalidaController extends Controller
             // Elimina la salida
             $salida->delete();
             // Redirige al usuario a la página de listado de salidas con un mensaje de éxito
-            return redirect()->route('salidas.index')->with('success', 'Salida eliminada exitosamente');
+            return redirect()->route('salidas.index')->with('mensaje', 'Salida eliminada exitosamente');
         } else {
             // Si no está autenticado, redirige al usuario a la página de inicio de sesión
             return redirect()->guest("/login");

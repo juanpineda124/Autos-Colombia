@@ -3,6 +3,12 @@
 @section('content')
 <div class="container">
   <h2 class="text-center"><b>Lista de salidas</b></h2>
+  @if (session()->has('mensaje'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session()->get('mensaje') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
   <a href="{{ route('salidas.create') }}" class="btn btn-secondary mb-3">Crear salida</a>
   <a href="{{ route('home') }}" class="btn btn-secondary mb-3 mx-5">Home</a>
   
@@ -47,11 +53,7 @@
                     <td>
                         <a href="{{ route('salidas.show', $salida->id) }}" class="btn btn-info">Ver</a>
                         <a href="{{ route('salidas.edit', $salida->id) }}" class="btn btn-primary">Editar</a>
-                        <form action="{{ route('salidas.destroy', $salida->id) }}" method='POST' style="display: inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                        </form>
+                        <a href="{{ route('salidas.show', $salida->id) }}" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
             @endforeach

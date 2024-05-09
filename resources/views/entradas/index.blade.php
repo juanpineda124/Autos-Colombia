@@ -3,6 +3,12 @@
 @section('content')
 <div class="container">
   <h2 class="text-center">Listado de entradas</h2>
+  @if (session()->has('mensaje'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session()->get('mensaje') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
   <table class="table table-striped">
         <thead>
             <tr>

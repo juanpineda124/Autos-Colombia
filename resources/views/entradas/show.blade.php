@@ -6,12 +6,20 @@
         <div class="card-header">
             <h1 class="card-title">PLACA: {{ $entrada->placa}}</h1>
         </div>
-        <div class="card-body">
-            <p><strong>Nombre propietario:</strong> {{ $entrada->nombre }}</p>
-            <p><strong>Telefono propietario:</strong> {{ $entrada->tel }}</p>
-            <p><strong>Celda:</strong> {{ $entrada->celda }}</p>
-            <p><strong>Fecha de creación:</strong> {{ $entrada->created_at }}</p>
-            <p><strong>Fecha de actualización:</strong> {{ $entrada->updated_at }}</p>   
+        <div class="row">
+            <div class="col-md-6">
+                <div class="margin">
+                    <p><strong>Nombre propietario:</strong> {{ $entrada->nombre }}</p>
+                    <p><strong>Telefono propietario:</strong> {{ $entrada->tel }}</p>
+                    <p><strong>Celda:</strong> {{ $entrada->celda }}</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <div class="margin">
+                    <p><strong>Fecha de creación:</strong> {{ $entrada->created_at }}</p>
+                    <p><strong>Fecha de actualización:</strong> {{ $entrada->updated_at }}</p>
+                </div>
+            </div>  
         </div>
         <div class="card-footer d-flex justify-content-start align-items-center">
             <a href="{{ route('entradas.index') }}" class="btn btn-secondary me-2">Regresar</a>
