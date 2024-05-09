@@ -46,7 +46,7 @@
         @error('celda')
             has-error
         @enderror">
-            <label for="celda">Telefono propietario</label>
+            <label for="celda">Celda</label>
             <input type="text" name="celda" id="celda" class="form-control"
                 value="{{ $entrada->celda }}">
             @error('tel')
