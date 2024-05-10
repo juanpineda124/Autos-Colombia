@@ -10,7 +10,7 @@ Este proyecto es una aplicación web desarrollada con Laravel que simula un sist
 ## Funcionalidades
 
 - Registro de vehículos: Permite registrar la entrada de nuevos vehículos al parqueadero, incluyendo información como la placa, tipo de vehículo, hora de entrada, etc.
-- Registro de salidas: Permite registrar la salida de vehículos del parqueadero, calculando automáticamente el tiempo de estadía y el monto a pagar según las tarifas establecidas.
+- Registro de salidas: Permite registrar la salida de vehículos del parqueadero.
 
 ## Requisitos
 
