@@ -15,7 +15,7 @@
                 <div class="margin">
                     <p><strong>Nombre Propietario:</strong> {{ $salida->entrada->nombre }}</p>
                     <p><strong>Telefono Propietario:</strong> {{ $salida->entrada->tel }}</p>
-                    <p><strong>Celda:</strong> {{ $salida->entrada->celda }}</p>
+                    <p><strong>Celda:</strong> {{ $salida->entrada->celda->lugar }}</p>
                 </div>
             </div>
             <div class="col-md-6 text-md-end">

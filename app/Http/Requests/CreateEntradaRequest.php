@@ -29,7 +29,8 @@ class CreateEntradaRequest extends FormRequest
             'placa' => 'required|string|max:15',
             'nombre' => 'required|string|max:100',
             'tel' => 'required|string|max:15',
-            'celda' => 'required|string|max:15',
+            'celda_id'=> 'required',
+            'user_id'=> 'required',
         ];
     }
 }

@@ -64,6 +64,9 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('celdas.index') }}">{{ __('Celda') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('entradas.index') }}">{{ __('Entrada') }}</a>
                             </li>
                             <li class="nav-item">

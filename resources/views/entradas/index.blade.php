@@ -17,6 +17,7 @@
                 <th>Nombre propietario</th>
                 <th>Telefono propietario</th>
                 <th>Celda</th>
+                <th>Empleado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -27,7 +28,16 @@
                     <td>{{ $entrada->placa}}</td>
                     <td>{{ $entrada->nombre}}</td>
                     <td>{{ $entrada->tel}}</td>
-                    <td>{{ $entrada->celda}}</td>
+                    <td>@if ($entrada->celda)
+                        <p>{{ $entrada->celda->lugar }}</p>
+                    @else
+                        <p>Esta entrada no tiene una celda asignado.</p>
+                    @endif</td>
+                    <td>@if ($entrada->empleado)
+                        <p>{{ $entrada->empleado->name }}</p>
+                    @else
+                        <p>Esta entrada no tiene un empleado asignado.</p>
+                    @endif</td>
                     <td>
                         <a href="{{ route('entradas.show', $entrada->id) }}" class="btn btn-info">Ver</a>
                         <a href="{{ route('entradas.edit', $entrada->id) }}" class="btn btn-primary">Editar</a>

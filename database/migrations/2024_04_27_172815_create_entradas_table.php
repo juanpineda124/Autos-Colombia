@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('placa', 15)->nullable();
             $table->string('nombre', 100)->nullable();
             $table->string('tel', 12)->nullable();
-            $table->string('celda', 10)->nullable();
+            $table->foreignId('celda_id')->nullable()->constrained('celdas')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

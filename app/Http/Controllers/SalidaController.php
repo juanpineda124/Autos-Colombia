@@ -17,7 +17,7 @@ class SalidaController extends Controller
      */
     public function index()
     {
-        // Busca el primer registro de la tabla "Entrada"
+        /* // Busca el primer registro de la tabla "Entrada"
         $entradaRecord = Entrada::first();
         // Busca el primer registro de la tabla "Salida"
         $salidaRecord = Salida::first();
@@ -28,13 +28,13 @@ class SalidaController extends Controller
             $salidaCreatedAt = $salidaRecord->created_at;
 
             $diffInSeconds = Carbon::parse($entradaCreatedAt)->diffInSeconds($salidaCreatedAt);
-        }
+        } */
         
         // Obtiene todas las salidas
         $salidas = Salida::all();
         
         // Retorna la vista 'salidas.index' con las salidas obtenidas y la diferencia de tiempo en segundos
-        return view('salidas.index', compact('salidas', 'diffInSeconds'));
+        return view('salidas.index', compact('salidas' /* , 'diffInSeconds' */));
     }
 
 
@@ -88,7 +88,7 @@ class SalidaController extends Controller
         // Verifica si el usuario está autenticado
         if(Auth::check()){
             // Carga la relación 'entrada' del modelo 'salida'
-            $salida->load('entrada');
+            $salida->load('entrada', 'celda');
             // Muestra la vista para ver detalles de la salida
             return view('salidas.show', compact('salida'));
         } else {

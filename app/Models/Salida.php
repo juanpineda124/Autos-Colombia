@@ -27,4 +27,9 @@ class Salida extends Model
         // Indica que una salida pertenece a una entrada en particular.
         return $this->belongsTo(Entrada::class);
     }
+
+    public function celda()
+    {
+        return $this->belongsTo(Celda::class);
+    }
 }

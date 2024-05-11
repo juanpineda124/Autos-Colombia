@@ -14,5 +14,27 @@ class Entrada extends Model
      *
      * @var array<string>
      */
-    protected $fillable = ['placa', 'nombre', 'tel', 'celda'];
+    protected $fillable = ['placa', 'nombre', 'tel', 'celda_id', 'user_id'];
+
+    /**
+     * Define la relación inversa entre Entrada y Celda.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function celda()
+    {
+        // Esta función define una relación de pertenencia (belongsTo) entre la salida y la entrada.
+        // Indica que una salida pertenece a una entrada en particular.
+        return $this->belongsTo(Celda::class);
+    }
+
+    /**
+     * Define la relación inversa entre Entrada y Empleado.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function empleado()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

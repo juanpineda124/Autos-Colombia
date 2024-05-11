@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CeldaController;
 use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\SalidaController;
 use App\Http\Controllers\UserController;
@@ -10,6 +11,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('celdas', CeldaController::class);
 Route::resource('entradas', EntradaController::class);
 Route::resource('salidas', SalidaController::class);
 Route::resource('users', UserController::class);
