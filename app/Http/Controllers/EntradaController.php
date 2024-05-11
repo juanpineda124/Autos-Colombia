@@ -70,6 +70,15 @@ class EntradaController extends Controller
         if(Auth::check()){
             // Crea una nueva salida con los datos del formulario
             Entrada::create($request->all());
+
+            // Obtener el ID de la categoría seleccionada
+            $celdaId = $request->input('celda_id');
+        
+            // Inactivar la categoría seleccionada
+            $celda = Celda::find($celdaId);
+            $celda->active = false;
+            $celda->save();
+
             // Redirige al usuario a la página de listado de salidas con un mensaje de éxito
             return redirect()->route('entradas.index')->with('mensaje', 'Entrada creada exitosamente');
         } else {
@@ -133,7 +142,16 @@ class EntradaController extends Controller
             // Valida los datos del formulario
             $validated = $request->validated();  
             // Actualiza la salida con los datos validados
-            $entrada->update($validated); 
+            $entrada->update($validated);
+
+            // Obtener el ID de la categoría seleccionada
+            $celdaId = $request->input('celda_id');
+        
+            // Inactivar la categoría seleccionada
+            $celda = Celda::find($celdaId);
+            $celda->active = false;
+            $celda->save();
+
             // Redirige al usuario a la página de listado de salidas con un mensaje de éxito
             return redirect()->route('entradas.index')->with('mensaje', 'Entrada actualizada exitosamente');
         } else {

@@ -32,6 +32,34 @@
                     @endforeach
                 </select>
             </div>
+            <script>
+                document.getElementById('celda').addEventListener('change', function() {
+                    var selectedCeldaId = this.value;
+
+                    if (selectedCeldaId !== '') {
+                        // Aquí puedes enviar una solicitud AJAX al servidor para inactivar la celda
+                     fetch('/inactivar-celda/' + selectedCeldaId, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            }
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                // Si la solicitud fue exitosa, recarga la página o realiza otras acciones necesarias
+                                window.location.reload(); // Esto recarga la página, puedes cambiarlo según tu necesidad
+                            } else {
+                                // Manejar errores de la solicitud
+                                console.error('Error al inactivar la celda');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error de red:', error);
+                        });
+                    }
+                });
+            </script>
 
             <div class="form-group mb-3">
                 <label for="user">Empleado:</label>
