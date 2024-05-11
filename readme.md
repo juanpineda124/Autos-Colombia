@@ -1,6 +1,6 @@
 # Autos Colombia
 
-Este proyecto es una aplicación web desarrollada con Laravel que simula un sistema de gestión de un parqueadero. Permite gestionar las entradas y salidas de vehículos, 
+Este proyecto es una aplicación web desarrollada con Laravel que simula un sistema de gestión de un parqueadero. Permite gestionar las entradas y salidas de vehículos, así como la gestión de empleados y celdas, proporciona una solución completa para administrar un parqueadero de manera eficiente 
 
 1. [Funcionalidades](#funcionalidades)
 2. [Requisitos](#requisitos)
