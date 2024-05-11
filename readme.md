@@ -28,7 +28,7 @@ Este proyecto es una aplicación web desarrollada con Laravel que simula un sist
 git clone https://github.com/juanpineda124/Autos-Colombia.git
 
 
-2. Instala las dependencias utilizando Composer: Una vez que hayas clonado el repositorio, navega al directorio del proyecto clonado y ejecuta el siguiente comando para instalar todas las dependencias de PHP a través de Composer:
+2. Instala las dependencias utilizando Composer: Una vez que hayas clonado el repositorio, navega al directorio del proyecto clonado, Abre tu terminal y ejecuta el siguiente comando para instalar todas las dependencias de PHP a través de Composer:
 
 composer install
 
