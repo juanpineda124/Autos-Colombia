@@ -14,9 +14,10 @@
     tu vehículo las 24 horas del día. Únete a nuestra comunidad y disfruta de la conveniencia que ofrecemos.</p>
 
     <div class="links">
-        <a href="{{ route('entradas.index') }}" class="btn btn-light mb-2">Registro de entrada de vehículos</a>
+        <a href="{{ route('celdas.index') }}" class="btn btn-light mb-2">Registro celdas</a>
+        <a href="{{ route('entradas.index') }}" class="btn btn-light mb-2">Registro entrada vehículos</a>
         <a href="{{ route('salidas.index') }}" class="btn btn-light mb-2">Registro salida vehiculos</a>
-        <a href="{{ route('users.index') }}" class="btn btn-light mb-2">Registro de empleados</a>
+        <a href="{{ route('users.index') }}" class="btn btn-light mb-2">Empleados</a>
     </div>
 </div>
 @endsection
