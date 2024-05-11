@@ -27,48 +27,64 @@
                             diariamente. Con un enfoque en la seguridad y la comodidad, nuestras instalaciones protegen tu vehículo 
                              las 24 horas del día. Únete a nuestra comunidad y disfruta de la conveniencia que ofrecemos.</p>
                     <!-- Agregue un contenedor para aplicar el margen -->
-                    <div class="mx-4"> 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div class="card">
-                                    <img src="{{ asset('images/empleados.png') }}" class="card-img-top" alt="imagen lista de empleados">
-                                    <div class="card-header">
-                                        Usuarios
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Ingresa y visualiza la lista de empleados registrados.</p>
-                                        <a href="{{ route('users.index') }}" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="mx-4">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <img src="{{ asset('images/empleados.png') }}" class="card-img-top" alt="imagen lista de empleados">
+                <div class="card-header">
+                    Usuarios
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Ingresa y visualiza la lista de empleados registrados.</p>
+                    <a href="{{ route('users.index') }}" class="btn btn-primary">Ingresar</a>
+                </div>
+            </div>
+        </div>
 
-                            <div class="col-md-6 mb-3">
-                                <div class="card">
-                                    <img src="{{ asset('images/entradas.png') }}" class="card-img-top" alt="imagen lista de autos">
-                                    <div class="card-header">
-                                        Entrada de autos
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Ingresa y visualiza los autos registrados.</p>
-                                        <a href="{{ route('entradas.index') }}" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <img src="{{ asset('images/entradas.png') }}" class="card-img-top" alt="imagen lista de autos">
+                <div class="card-header">
+                    Entrada de autos
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Ingresa y visualiza los autos registrados.</p>
+                    <a href="{{ route('entradas.index') }}" class="btn btn-primary">Ingresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        <div class="col-md-6 mb-3">
-                                <div class="card">
-                                    <img src="{{ asset('images/salidas.png') }}" class="card-img-top" alt="imagen salida de autos">
-                                    <div class="card-header">
-                                        Salida de autos
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Ingresa y visualiza la salida de autos.</p>
-                                        <a href="{{ route('salidas.index') }}" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <img src="{{ asset('images/salidas.png') }}" class="card-img-top" alt="imagen salida de autos">
+                <div class="card-header">
+                    Salida de autos
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Ingresa y visualiza la salida de autos.</p>
+                    <a href="{{ route('salidas.index') }}" class="btn btn-primary">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <img src="{{ asset('images/celdas.png') }}" class="card-img-top" alt="imagen salida de autos">
+                <div class="card-header">
+                    Celdas disponibles
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Ingresa y visualiza las celdas del parqueadero.</p>
+                    <a href="{{ route('celdas.index') }}" class="btn btn-primary">Ingresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                       
                     </div>
                 </div>
             </div>
