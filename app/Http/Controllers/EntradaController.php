@@ -71,10 +71,10 @@ class EntradaController extends Controller
             // Crea una nueva salida con los datos del formulario
             Entrada::create($request->all());
 
-            // Obtener el ID de la categoría seleccionada
+            // Obtener el ID de la celda seleccionada
             $celdaId = $request->input('celda_id');
         
-            // Inactivar la categoría seleccionada
+            // Inactivar la celda seleccionada
             $celda = Celda::find($celdaId);
             $celda->active = false;
             $celda->save();
@@ -144,10 +144,10 @@ class EntradaController extends Controller
             // Actualiza la salida con los datos validados
             $entrada->update($validated);
 
-            // Obtener el ID de la categoría seleccionada
+            // Obtener el ID de la celda seleccionada
             $celdaId = $request->input('celda_id');
         
-            // Inactivar la categoría seleccionada
+            // Inactivar la celda seleccionada
             $celda = Celda::find($celdaId);
             $celda->active = false;
             $celda->save();
