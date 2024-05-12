@@ -31,6 +31,7 @@ git clone https://github.com/juanpineda124/Autos-Colombia.git
 2. **Instala las dependencias utilizando Composer:** Una vez que hayas clonado el repositorio, navega al directorio del proyecto clonado, Abre tu terminal y ejecuta el siguiente comando para instalar todas las dependencias de PHP a través de Composer:
 
 cd Autos-Colombia
+
 composer install
 
 3. **Crea archivo de configuración de entorno:** Laravel utiliza un archivo  .env para almacenar las variables de entorno del proyecto. Puedes crear una copia del archivo .env.example y renombrarlo como .env. Luego, ajusta las configuraciones según tu entorno.
