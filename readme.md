@@ -9,9 +9,9 @@ Este proyecto es una aplicación web desarrollada con Laravel que simula un sist
 
 ## Funcionalidades
 
-- **Registro de celda:** Permite registrar las celdas de estacionamiento disponibles en el parqueadero. Permite marcar una celda como ocupada cuando un vehículo ingresa al parqueadero y liberar una celda cuando un vehículo sale.
-- **Registro de vehículos:** Permite registrar la entrada de nuevos vehículos al parqueadero, incluyendo información como la placa, nombre del propietario, telefono del propietario, hora de entrada y la celda de ocupacion. 
-- **Registro de salidas:** Permite registrar la salida de vehículos del parqueadero.
+- **Registro de celda:** Permite registrar las celdas de estacionamiento disponibles en el parqueadero. Permite marcar una celda como ocupada cuando un vehículo ingresa al parqueadero y liberar una celda cuando un vehículo sale. Permite el modificado y eliminado de la informacion almacenada.
+- **Registro de vehículos:** Permite registrar la entrada de nuevos vehículos al parqueadero, incluyendo información como la placa, nombre del propietario, telefono del propietario, hora de entrada y la celda de ocupacion. Permite el modificado y eliminado de la informacion almacenada. 
+- **Registro de salidas:** Permite registrar la salida de vehículos del parqueadero. Permite el modificado y eliminado de la informacion almacenada.
 - **Registro de empleado:** Permite el acceso al sistema por parte del personal encargado del parqueadero. Permite autenticar a los empleados para que puedan registrar entradas y salidas de vehículos, así como administrar las celdas de estacionamiento.
 
 ## Requisitos
