@@ -6,10 +6,7 @@
     <form action="{{ route('entradas.update', $entrada->id)}}" method="POST">
         @csrf
         @method('PUT')
-        <div class="form-group mb-3
-        @error('placa')
-            has-error
-        @enderror">
+        <div class="form-group mb-3 @error('placa') has-error @enderror">
             <label for="placa">Placa</label>
             <input type="text" name="placa" id="placa" class="form-control"
                 value="{{ $entrada->placa }}">
@@ -18,10 +15,7 @@
             @enderror
         </div>
 
-        <div class="form-group mb-3
-        @error('placa')
-            has-error
-        @enderror">
+        <div class="form-group mb-3 @error('nombre') has-error @enderror">
             <label for="nombre">Nombre propietario</label>
             <input type="text" name="nombre" id="nombre" class="form-control"
                 value="{{ $entrada->nombre }}">
@@ -30,10 +24,7 @@
             @enderror
         </div>
 
-        <div class="form-group mb-3
-        @error('tel')
-            has-error
-        @enderror">
+        <div class="form-group mb-3 @error('tel') has-error @enderror">
             <label for="tel">Telefono propietario</label>
             <input type="text" name="tel" id="tel" class="form-control"
                 value="{{ $entrada->tel }}">
@@ -48,15 +39,18 @@
                 @foreach($celdas as $celda)
                     <option value="{{ $celda->id }}" 
                     @if($celda->id == $entrada->celda_id) selected @endif
-                    @if(!$celda->active) disabled @endif>{{ $celda->lugar }}</option>
+                    @if(!$celda->active && $celda->id != $entrada->celda_id) disabled @endif>
+                        {{ $celda->lugar }}
+                    </option>
                 @endforeach
             </select>
         </div>
         <script>
             document.getElementById('celda').addEventListener('change', function() {
                 var selectedCeldaId = this.value;
+                var originalCeldaId = "{{ $entrada->celda_id }}";
 
-                if (selectedCeldaId !== '') {
+                if (selectedCeldaId !== '' && selectedCeldaId !== originalCeldaId) {
                     // Aquí puedes enviar una solicitud AJAX al servidor para inactivar la celda
                     fetch('/inactivar-celda/' + selectedCeldaId, {
                         method: 'PUT',
@@ -91,10 +85,8 @@
             </select>
         </div>
 
-
         <button class="btn btn-success mb-3" type="submit">Guardar</button>
         <a href="{{ route('entradas.index') }}" class="btn btn-secondary mx-5 mb-3">Regresar</a>
     </form>
-    
 </div>
 @endsection
