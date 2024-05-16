@@ -49,10 +49,15 @@ php artisan key:generate
 Asegúrate de configurar las credenciales de la base de datos en el archivo .env en las siguientes lineas.
 
 DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=TU_BASE_DE_DATOS
+
 DB_USERNAME=TU_USUARIO
+
 DB_PASSWORD=TU_CONTRASEÑA
 
 6. **Migrar la base de datos:** Si el proyecto Laravel utiliza migraciones de base de datos, ejecuta los siguientes comandos para migrar la base de datos:
