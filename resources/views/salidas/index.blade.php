@@ -20,6 +20,7 @@
                 <th>Telefono Propietario</th>
                 <th>Hora entrada</th>
                 <th>Hora salida</th>
+                <th>Celda</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -43,6 +44,11 @@
                         <p>Esta salida no tiene una placa asignada.</p>
                     @endif</td>
                     <td>{{ $salida->created_at}}</td>
+                    <td>@if ($salida->entrada)
+                        <p>{{ $salida->entrada->celda->lugar }}</p>
+                    @else
+                        <p>Esta salida no tiene una placa asignada.</p>
+                    @endif</td>
                     <td>
                         <a href="{{ route('salidas.show', $salida->id) }}" class="btn btn-info">Ver</a>
                         <a href="{{ route('salidas.edit', $salida->id) }}" class="btn btn-primary">Editar</a>
