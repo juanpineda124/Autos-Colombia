@@ -34,7 +34,7 @@ cd Autos-Colombia
 
 composer install
 
-3. **Crea archivo de configuración de entorno:** Laravel utiliza un archivo  .env para almacenar las variables de entorno del proyecto. Puedes crear una copia del archivo .env.example y renombrarlo como .env. Luego, ajusta las configuraciones según tu entorno.
+3. **Crea archivo de configuración de entorno:** Laravel utiliza un archivo  .env para almacenar las variables de entorno del proyecto. Puedes crear una copia del archivo .env.example y renombrarlo como .env. Luego, ajusta las configuraciones según tu entorno. Puedes copiar la siguiente linea de codigo en tu terminal.
 
 cp .env.example .env
 
@@ -44,7 +44,8 @@ Ajusta las configuraciones según tu entorno.
 
 php artisan key:generate
 
-5. **Configurar la base de datos:** Si tu proyecto Laravel utiliza una base de datos, configura las credenciales de la base de datos en el archivo   .env.
+
+5. **Configurar la base de datos:** Si tu proyecto Laravel utiliza una base de datos, configura las credenciales de la base de datos en el archivo   .env. Abre el proyecto en el editor de tu preferencia.
 
 Asegúrate de configurar las credenciales de la base de datos en el archivo .env en las siguientes lineas.
 

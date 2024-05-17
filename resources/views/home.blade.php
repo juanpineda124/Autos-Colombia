@@ -41,6 +41,19 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <img src="{{ asset('images/celdas.png') }}" class="card-img-top" alt="imagen salida de autos">
+                                    <div class="card-header">
+                                        Celdas disponibles
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Ingresa y visualiza las celdas del parqueadero.</p>
+                                        <a href="{{ route('celdas.index') }}" class="btn btn-primary">Ingresar</a>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <div class="col-md-6 mb-3">
                                 <div class="card">
@@ -64,19 +77,6 @@
                                     <div class="card-body">
                                         <p class="card-text">Ingresa y visualiza la salida de autos.</p>
                                         <a href="{{ route('salidas.index') }}" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <div class="card">
-                                    <img src="{{ asset('images/celdas.png') }}" class="card-img-top" alt="imagen salida de autos">
-                                    <div class="card-header">
-                                        Celdas disponibles
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Ingresa y visualiza las celdas del parqueadero.</p>
-                                        <a href="{{ route('celdas.index') }}" class="btn btn-primary">Ingresar</a>
                                     </div>
                                 </div>
                             </div>
