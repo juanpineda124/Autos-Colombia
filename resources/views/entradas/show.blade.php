@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="card" style="background-color: #d1f7d1;">
+    <div class="card" style="background-color: #ffffcc;">
         <div class="card-header">
             <h1 class="card-title">PLACA: {{ $entrada->placa}}</h1>
         </div>
