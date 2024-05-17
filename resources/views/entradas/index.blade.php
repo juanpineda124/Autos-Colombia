@@ -18,6 +18,7 @@
                 <th>Telefono propietario</th>
                 <th>Celda</th>
                 <th>Empleado</th>
+                <th>Hora entrada</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -38,6 +39,7 @@
                     @else
                         <p>Esta entrada no tiene un empleado asignado.</p>
                     @endif</td>
+                    <td>{{ $entrada->created_at}}</td>
                     <td>
                         <a href="{{ route('entradas.show', $entrada->id) }}" class="btn btn-info">Ver</a>
                         <a href="{{ route('entradas.edit', $entrada->id) }}" class="btn btn-primary">Editar</a>
