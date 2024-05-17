@@ -20,6 +20,7 @@
                 <th>Telefono Propietario</th>
                 <th>Hora entrada</th>
                 <th>Hora salida</th>
+                <th>Tiempo Estacionado</th>
                 <th>Celda</th>
                 <th>Acciones</th>
             </tr>
@@ -44,6 +45,22 @@
                         <p>Esta salida no tiene una placa asignada.</p>
                     @endif</td>
                     <td>{{ $salida->created_at}}</td>
+                    <td>
+                        @if ($salida->entrada)
+                        @php
+                            \Carbon\Carbon::setLocale('es');
+                            $horaEntrada = \Carbon\Carbon::parse($salida->entrada->created_at);
+                            $horaSalida = \Carbon\Carbon::parse($salida->created_at);
+                            $segundosEstacionado = $horaEntrada->diffInSeconds($horaSalida);
+                            $minutos = floor($segundosEstacionado / 60);
+                            $segundos = $segundosEstacionado % 60;
+                            $tiempoEstacionado = "{$minutos} minutos y {$segundos} segundos";
+                        @endphp
+                            <p>{{ $tiempoEstacionado }}</p>
+                        @else
+                            <p>Esta salida no tiene una hora de entrada asignada.</p>
+                        @endif
+                    </td>
                     <td>@if ($salida->entrada)
                         <p>{{ $salida->entrada->celda->lugar }}</p>
                     @else
