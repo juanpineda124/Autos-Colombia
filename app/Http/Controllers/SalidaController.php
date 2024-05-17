@@ -17,24 +17,12 @@ class SalidaController extends Controller
      */
     public function index()
     {
-        /* // Busca el primer registro de la tabla "Entrada"
-        $entradaRecord = Entrada::first();
-        // Busca el primer registro de la tabla "Salida"
-        $salidaRecord = Salida::first();
-
-        if ($entradaRecord && $salidaRecord) {
-            // Si hay registros en ambas tablas, calcula la diferencia en segundos
-            $entradaCreatedAt = $entradaRecord->created_at;
-            $salidaCreatedAt = $salidaRecord->created_at;
-
-            $diffInSeconds = Carbon::parse($entradaCreatedAt)->diffInSeconds($salidaCreatedAt);
-        } */
         
         // Obtiene todas las salidas
         $salidas = Salida::all();
         
         // Retorna la vista 'salidas.index' con las salidas obtenidas y la diferencia de tiempo en segundos
-        return view('salidas.index', compact('salidas' /* , 'diffInSeconds' */));
+        return view('salidas.index', compact('salidas'));
     }
 
 
