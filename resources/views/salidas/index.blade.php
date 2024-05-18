@@ -52,9 +52,16 @@
                             $horaEntrada = \Carbon\Carbon::parse($salida->entrada->created_at);
                             $horaSalida = \Carbon\Carbon::parse($salida->created_at);
                             $segundosEstacionado = $horaEntrada->diffInSeconds($horaSalida);
-                            $minutos = floor($segundosEstacionado / 60);
-                            $segundos = $segundosEstacionado % 60;
-                            $tiempoEstacionado = "{$minutos} minutos y {$segundos} segundos";
+
+                            if ($segundosEstacionado >= 3600) {
+                                $horas = floor($segundosEstacionado / 3600);
+                                $minutos = floor(($segundosEstacionado % 3600) / 60);
+                                $tiempoEstacionado = "{$horas} horas y {$minutos} minutos";
+                            } else {
+                                $minutos = floor($segundosEstacionado / 60);
+                                $segundos = $segundosEstacionado % 60;
+                                $tiempoEstacionado = "{$minutos} minutos y {$segundos} segundos";
+                            }
                         @endphp
                             <p>{{ $tiempoEstacionado }}</p>
                         @else
