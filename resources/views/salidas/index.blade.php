@@ -22,6 +22,7 @@
                 <th>Hora salida</th>
                 <th>Tiempo Estacionado</th>
                 <th>Celda</th>
+                <th>Monto a Pagar</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -53,15 +54,31 @@
                             $horaSalida = \Carbon\Carbon::parse($salida->created_at);
                             $segundosEstacionado = $horaEntrada->diffInSeconds($horaSalida);
 
-                            if ($segundosEstacionado >= 3600) {
-                                $horas = floor($segundosEstacionado / 3600);
-                                $minutos = floor(($segundosEstacionado % 3600) / 60);
-                                $tiempoEstacionado = "{$horas} horas y {$minutos} minutos";
-                            } else {
-                                $minutos = floor($segundosEstacionado / 60);
-                                $segundos = $segundosEstacionado % 60;
-                                $tiempoEstacionado = "{$minutos} minutos y {$segundos} segundos";
+                            // Convertir el tiempo estacionado a días, horas, minutos y segundos
+                            $dias = floor($segundosEstacionado / 86400);
+                            $horas = floor(($segundosEstacionado % 86400) / 3600);
+                            $minutos = floor(($segundosEstacionado % 3600) / 60);
+                            $segundos = $segundosEstacionado % 60;
+
+                            $tiempoEstacionado = '';
+                            if ($dias > 0) {
+                                $tiempoEstacionado .= "{$dias} días";
+                                if ($horas > 0) {
+                                    $tiempoEstacionado .= ", {$horas} horas";
+                                }
+                                } elseif ($horas > 0) {
+                                    $tiempoEstacionado .= "{$horas} horas";
+                                    if ($minutos > 0) {
+                                        $tiempoEstacionado .= ", {$minutos} minutos";
+                                    }
+                                } else {
+                                    $tiempoEstacionado .= "{$minutos} minutos";
+                                    if ($segundos > 0) {
+                                    $tiempoEstacionado .= ", {$segundos} segundos";
+                                }
                             }
+                            
+                            $montoAPagar = (new App\Http\Controllers\SalidaController)->calculatePayment($segundosEstacionado);
                         @endphp
                             <p>{{ $tiempoEstacionado }}</p>
                         @else
@@ -73,6 +90,13 @@
                     @else
                         <p>Esta salida no tiene una placa asignada.</p>
                     @endif</td>
+                    <td>
+                        @if ($salida->entrada)
+                            <p>$ {{ number_format($montoAPagar, 2) }}</p>
+                        @else
+                            <p>No disponible</p>
+                        @endif
+                    </td>
                     <td>
                         <a href="{{ route('salidas.show', $salida->id) }}" class="btn btn-info">Ver</a>
                         <a href="{{ route('salidas.edit', $salida->id) }}" class="btn btn-primary">Editar</a>
