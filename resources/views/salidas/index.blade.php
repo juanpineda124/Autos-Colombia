@@ -101,6 +101,7 @@
                         <a href="{{ route('salidas.show', $salida->id) }}" class="btn btn-info">Ver</a>
                         <a href="{{ route('salidas.edit', $salida->id) }}" class="btn btn-primary">Editar</a>
                         <a href="{{ route('salidas.show', $salida->id) }}" class="btn btn-danger">Eliminar</a>
+                        <a href="{{ route('pagos.create', ['salida_id' => $salida->id]) }}" class="btn btn-success">Pagar</a>
                     </td>
                 </tr>
             @endforeach
