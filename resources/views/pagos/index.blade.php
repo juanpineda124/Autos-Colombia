@@ -9,7 +9,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-  <a href="{{ route('home') }}" class="btn btn-secondary mb-3 mx-5">Home</a>
+  <a href="{{ route('home') }}" class="btn btn-secondary mb-3">Home</a>
   
   <table class="table table-striped">
         <thead>
@@ -52,7 +52,7 @@
                         @endif
                     </td>
                     <td>{{ $pago->tiempo_estacionado }}</td>
-                    <td> $ {{ $pago->monto_pagado }}</td>
+                    <td> $ {{ number_format($pago->monto_pagado, 2) }}</td>
                 </tr>
             @endforeach
         </tbody>

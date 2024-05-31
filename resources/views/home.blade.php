@@ -80,6 +80,19 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <img src="{{ asset('images/pagos.png') }}" class="card-img-top" alt="imagen pagos">
+                                    <div class="card-header">
+                                        Pagos
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Visualiza el listado de pagos.</p>
+                                        <a href="{{ route('pagos.index') }}" class="btn btn-primary">Ingresar</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
