@@ -13,6 +13,7 @@ Este proyecto es una aplicación web desarrollada con Laravel que simula un sist
 - **Registro de vehículos:** Permite registrar la entrada de nuevos vehículos al parqueadero, incluyendo información como la placa, nombre del propietario, telefono del propietario, hora de entrada y la celda de ocupacion. Permite el modificado y eliminado de la informacion almacenada. 
 - **Registro de salidas:** Permite registrar la salida de vehículos del parqueadero. Permite el modificado y eliminado de la informacion almacenada.
 - **Registro de empleado:** Permite el acceso al sistema por parte del personal encargado del parqueadero. Permite autenticar a los empleados para que puedan registrar entradas y salidas de vehículos, así como administrar las celdas de estacionamiento.
+- **Gestion de pagos:** Permite registrar el pago del tiempo de estacionamiento en el parqueadero, incluye el tiempo de estacionamiento y el monto a ser pagado. Permite realizar el pago y listar los pagos realizados.
 
 ## Requisitos
 
