@@ -80,6 +80,7 @@ Este proyecto está bajo la [Licencia MIT](LICENSE).
 © 2024 Grupo:
 Juan Diego Urrego Gutiérrez,
 Juan Gabriel Pineda Mora,
+Estiben Mosquera Palacios,
 Marco Del Boccio Azuaje.
 
 
