@@ -21,6 +21,7 @@
                 <th>Hora de Salida</th>
                 <th>Tiempo Estacionado</th>
                 <th>Monto Pagado</th>
+                <th>Hora de pago</th>
             </tr>
         </thead>
         <tbody>
@@ -53,6 +54,7 @@
                     </td>
                     <td>{{ $pago->tiempo_estacionado }}</td>
                     <td> $ {{ number_format($pago->monto_pagado, 2) }}</td>
+                    <td> $ {{ $pago->created_at }}</td>
                 </tr>
             @endforeach
         </tbody>
